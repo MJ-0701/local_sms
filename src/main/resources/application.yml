@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+# ═══════════════════════════════════════
+# 솔라피 API 설정
+# https://console.solapi.com 에서 확인
+# ═══════════════════════════════════════
+solapi:
+  api-key: "YOUR_API_KEY"         # 솔라피 API Key
+  api-secret: "YOUR_API_SECRET"   # 솔라피 API Secret
+  sender: "01012345678"           # 등록된 발신번호 (하이픈 없이)
+  base-url: "https://api.solapi.com"
+
+# ═══════════════════════════════════════
+# 구글 시트 설정
+# ═══════════════════════════════════════
+google:
+  sheets:
+    spreadsheet-id: "1iSEGoMFMHnlJxmCz2GwMygsPd83staIBVRlhD_QL3BA"
+    credentials-path: "credentials.json"    # 서비스 계정 JSON 키 파일 경로
+    sheet-name: "회비 납부자"                  # 시트명
+
+# ═══════════════════════════════════════
+# 명찰 PPT 설정
+# ═══════════════════════════════════════
+nametag:
+  template-path: "templates/nametag_template.pptx"  # 템플릿 파일 경로
+  output-dir: "output"                               # 출력 디렉토리
+
+# ═══════════════════════════════════════
+# 문자 발송 설정
+# ═══════════════════════════════════════
+sms:
+  dry-run: true        # true면 실제 발송 안하고 로그만 (테스트용)
+  delay-ms: 100        # 건별 발송 간격 (ms), 솔라피는 초당 50건 제한
+  batch-size: 1000     # 한 번에 발송할 최대 건수
