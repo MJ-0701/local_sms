@@ -38,7 +38,7 @@ class SolapiService(
     /**
      * LMS 대량 발송 (솔라피 /messages/v4/send-many)
      */
-    fun sendBulkLms(targets: List<SmsTarget>, message: String): List<SmsResult> {
+    fun sendBulkLms(targets: List<SmsTarget>, message: String, subject: String = "[수련회비 납부안내]"): List<SmsResult> {
         val results = mutableListOf<SmsResult>()
 
         // 솔라피는 한 번에 최대 10,000건, 배치로 나눔
@@ -63,7 +63,7 @@ class SolapiService(
                     "from" to solapiProps.sender,
                     "text" to message,
                     "type" to "LMS",
-                    "subject" to "[잇는공동체]"  // LMS 제목
+                    "subject" to subject
                 )
             }
 

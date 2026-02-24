@@ -76,7 +76,10 @@ class GoogleSheetService(
 
                 val gender = row.getOrNull(vc.genderCol)?.toString()?.trim()
                 val paidRaw = row.getOrNull(vc.paidCol)?.toString()?.trim() ?: ""
-                val paid = paidRaw.equals("O", ignoreCase = true) || paidRaw == "○"
+                val paid = paidRaw.equals("TRUE", ignoreCase = true)
+                    || paidRaw.equals("O", ignoreCase = true)
+                    || paidRaw == "○"
+                    || paidRaw == "✓"
 
                 // 연락처는 회비납부자 시트에 없을 수 있음 → 별도 매핑 필요
                 members.add(

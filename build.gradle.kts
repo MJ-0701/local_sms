@@ -32,7 +32,8 @@ dependencies {
     implementation("com.google.apis:google-api-services-sheets:v4-rev20250106-2.0.0")
     implementation("com.google.auth:google-auth-library-oauth2-http:1.31.0")
 
-    // Apache POI (PPTX)
+    // Apache POI (Excel file parsing + PPTX)
+    implementation("org.apache.poi:poi:5.3.0")
     implementation("org.apache.poi:poi-ooxml:5.3.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
